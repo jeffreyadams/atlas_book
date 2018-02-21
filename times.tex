@@ -1,0 +1,217 @@
+%edited starting 8/27/17 for re-submission to Duke
+\documentclass[10pt,leqno]{article}
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsrefs}
+\usepackage{rotating}
+\usepackage{amsmath}
+%\usepackage{showkeys}
+\usepackage{tabularx}
+\setlength\extrarowheight{4pt}   %spacing in tables
+\usepackage{theorem}
+\usepackage[matrix,tips,frame,color,line,poly,curve]{xy}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\newcommand\kappaarrow[2]{#1\overset\kappa\rightarrow#2}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{desideratum}[equation]{Desideratum}
+\newtheorem{conjecture}[equation]{Conjecture}
+\newtheorem{proposition}[equation]{Proposition}
+\newtheorem{remark}[equation]{Remark}
+{\theorembodyfont{\rmfamily}\newtheorem{theoremplain}[equation]{Theorem}
+\newtheorem{remarkplain}[equation]{Remark}
+\newtheorem{editorialremarkplain}[equation]{Editorial Remark}
+\newtheorem{exampleplain}[equation]{Example}
+\newtheorem{corollaryplain}[equation]{Corollary}
+\newtheorem{mytable}[equation]{Table}
+}
+
+\renewcommand{\sec}[1]{\section{#1}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+  \setcounter{equation}{0}}
+\newcommand{\subsec}[1]{\subsection{#1}
+\renewcommand{\theequation}{\thesubsection.\arabic{equation}}
+  \setcounter{equation}{0}}
+
+\newcommand{\subsubsec}[1]{\subsubsection{#1}
+\renewcommand{\theequation}{\thesubsection.\arabic{equation}}
+  \setcounter{equation}{0}}
+
+% Danger, Will Robinson!
+\def\danger{\begin{trivlist}\item[]\noindent%
+\begingroup\hangindent=3pc\hangafter=-2%\clubpenalty=10000%
+\def\par{\endgraf\endgroup}%
+\hbox to0pt{\hskip-\hangindent\dbend\hfill}\ignorespaces}
+\def\enddanger{\par\end{trivlist}}
+
+\newcommand{\Gext}{\negthinspace\negthinspace\phantom{a}^\delta G}
+\newcommand{\thetaG}{\negthinspace\negthinspace\phantom{a}^\theta
+  G(\C)}
+\newcommand{\thetaK}{\negthinspace\negthinspace\phantom{a}^\theta K(\C)}
+\newcommand{\qed}{\hfill $\square$ \medskip}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\qed}
+\newcommand\exact[3]{1\rightarrow #1\rightarrow #2\rightarrow #3\rightarrow1}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Inv}{\mathrm{Invol}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\gr}{\mathrm{gr}}
+\newcommand{\Out}{\mathrm{Out}}
+\newcommand{\Int}{\mathrm{Int}}
+\renewcommand{\int}{\mathrm{int}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\zinv}{\mathrm{inv}}
+\newcommand{\SRF}{\mathrm{SRF}}
+\newcommand{\Gad}{G_\mathrm{ad}}
+\newcommand{\Gsc}{G_\mathrm{sc}}
+\newcommand{\Zsc}{Z_\mathrm{sc}}
+\newcommand{\Ztor}{Z_\mathrm{tor}}
+\newcommand{\Gbar}{\overline G}
+\newcommand{\Kad}{K_\mathrm{ad}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\Norm}{\mathrm{Norm}}
+\newcommand{\Cent}{\mathrm{Cent}}
+\newcommand{\I}{\mathcal I}
+\renewcommand{\O}{\mathcal O}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\W}{\mathbb W}
+\newcommand{\Ztwo}{\mathbb Z_2}
+\newcommand{\N}{\mathcal N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\E}{\mathbb E}
+\newcommand{\G}{G}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\h}{\mathfrak h}
+\renewcommand{\sl}{\mathfrak s\mathfrak l}
+\renewcommand{\P}{\mathfrak p}
+\renewcommand{\a}{\mathfrak a}
+\newcommand{\zk}{\mathfrak z_\mathfrak k}
+\newcommand{\A}{\mathbb A}
+\newcommand{\K}{\mathcal K}
+\newcommand{\B}{\mathcal B}
+\renewcommand{\k}{\mathfrak k}
+\newcommand{\spint}{\widetilde{Spin}}
+\newcommand{\ch}[1]{#1^\vee}
+\newcommand\sigmaqc{\sigma_{\text{qc}}}
+\newcommand\thetaqc{\theta_{\text{qc}}}
+\newcommand{\Fgal}{F_{\text{gal}}}
+\newcommand{\Falg}{F_{\text{alg}}}
+\newcommand{\cl}{\mathit{cl}}
+\newcommand{\Lie}{\mathrm{Lie}}
+\newcommand{\opp}{\text{-opp}}
+
+\renewcommand{\t}{\mathfrak t}
+\newcommand{\su}{\mathfrak s\mathfrak u}
+\newcommand{\g}{\mathfrak g}
+\newcommand\inv{^{-1}}
+\newcommand\wh{\widehat}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\SL}{\text{SL}}
+\newcommand{\SO}{\text{SO}}
+\newcommand{\SU}{\text{SU}}
+\newcommand{\Spin}{\text{Spin}}
+
+\usepackage{times}
+\begin{document}
+\title{Galois and Cartan Cohomology of Real Groups}
+\author{Jeffrey Adams and Olivier Ta\"ibi}
+\maketitle
+
+{\renewcommand{\thefootnote}{} 
+\footnote{2000 Mathematics Subject Classification: 11E72 (Primary), 20G10, 20G20}
+\footnote{Jeffrey Adams is supported in part by  National Science
+Foundation Grant \#DMS-1317523}
+\footnote{Olivier Ta\"ibi is supported by ERC Starting Grant 306326.}}
+
+
+\section*{Abstract}
+Suppose $G$ is a complex, reductive algebraic group. A real form of
+$G$ is an antiholomorphic involutive automorphism $\sigma$, so
+$G(\R)=G(\C)^\sigma$ is a real Lie group.  Write $H^1(\sigma,G)$ for
+the Galois cohomology (pointed) set $H^1(\text{Gal}(\C/\R),G)$.  A
+Cartan involution for $\sigma$ is an involutive holomorphic
+automorphism $\theta$ of $G$, commuting with $\sigma$, so that
+$\theta\sigma$ is a compact real form of $G$.  Let $H^1(\theta,G)$ be
+the set $H^1(\Ztwo,G)$ where the action of the nontrivial element of
+$\Ztwo$ is by $\theta$.  By analogy with the Galois group we refer to
+$H^1(\theta,G)$ as Cartan cohomology of $G$ with respect to $\theta$.
+Cartan's classification of real forms of a connected group, in terms
+of their maximal compact subgroups, amounts to an isomorphism
+$H^1(\sigma,\Gad)\simeq H^1(\theta,\Gad)$ where $\Gad$ is the adjoint
+group.  Our main result is a generalization of this: there is a
+canonical isomorphism $H^1(\sigma,G)\simeq H^1(\theta,G)$.
+
+We apply this result to give simple proofs of some well
+known structural results: the Kostant-Sekiguchi correspondence of
+nilpotent orbits; Matsuki duality of orbits on the flag
+variety; conjugacy classes of Cartan subgroups; and structure of the
+Weyl group.  We also use it to compute $H^1(\sigma,G)$ for all simple,
+simply connected groups, and  to give a cohomological
+interpretation of strong real forms. For  the applications it 
+is important that we do not assume $G$ is connected.
+
+\sec{Introduction}
+
+Suppose $G$ is a complex, reductive algebraic group.  A {\em real form} of
+$G$ is an antiholomorphic involutive automorphism $\sigma$ of $G$, so
+$G(\R)=G(\C)^\sigma$ is a real Lie group. See Section \ref{s:real} for more details.
+Let $\Gamma=\Gal(\C/\R)$
+and write $H^i(\Gamma,G)$ for the Galois cohomology of $G$ (if $G$ is
+nonabelian $i\le 1$).  If we want to specify how the nontrivial
+element of $\Gamma$ acts we will write $H^i(\sigma,G)$.  The
+equivalence (i.e. conjugacy) classes of real forms of $G$, which are
+inner to $\sigma$ (see Section \ref{s:real}), are parametrized by
+$H^1(\sigma,\Gad)$ where $\Gad$ is the adjoint group.
+
+On the other hand, at least for $G$ connected, Cartan classified the
+real forms of $G$ in terms of holomorphic involutions as follows. We
+say a {\em Cartan involution} for $\sigma$ is a holomorphic involutive
+automorphism $\theta$, commuting with $\sigma$, so that
+$\sigma^c=\theta\sigma$ is a compact real form.
+If $G$ is connected then $\theta$
+exists, and is unique up to conjugacy by $G^\sigma$. 
+Following Mostow we  prove a similar result in general. See Section \ref{s:real}.
+
+Let $H^i(\Ztwo,G)$ be the group cohomology of $G$ where the nontrivial
+element of $\Ztwo=\Z/2\Z$ acts by $\theta$.  As above we denote this
+$H^i(\theta,G)$, and we refer to this as Cartan cohomology of $G$.
+Conjugacy classes of involutions which are inner to $\theta$ are
+parametrized by $H^1(\theta,\Gad)$.
+
+Thus the equivalence of the two classifications of real forms amounts
+to an isomorphism (for connected $G$) of the first Galois and Cartan cohomology spaces
+$H^1(\sigma,\Gad)\simeq H^1(\theta,\Gad)$.  It is natural
+to ask if the same isomorphism holds with $G$ in place of $\Gad$. 
+For our applications it is helpful to know the result for disconnected groups as well. 
+
+\begin{theorem}
+\label{t:main}
+Suppose $G$ is a complex, reductive algebraic group (not necessarily
+connected), and $\sigma$ is a real form of $G$.
+Let $\theta$ be a  Cartan involution for $\sigma$. 
+Then there is a canonical isomorphism $H^1(\sigma,G)\simeq H^1(\theta,G)$. 
+\end{theorem}
+
+The proof will be given in Section \ref{s:borelserre}.
+
+The interplay between the $\sigma$ and $\theta$ pictures plays a
+fundamental role in the structure and representation theory of real
+groups, going back at least to Harish Chandra's formulation of the
+representation theory of $G(\R)$ in terms of $(\g,K)$-modules.  The
+theorem is an aspect of this, and we give several applications.
+
+Suppose $X$ is a homogeneous space for $G$, equipped with a real structure
+\enddocument
+\end
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: s_{1}:0 -> -1 6
+
+

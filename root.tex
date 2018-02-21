@@ -1,0 +1,135 @@
+\chapter{Root Systems}  
+\label{root}
+
+For many
+purposes one may identify a connected reductive algebraic 
+group with its group of complex points.
+For the discussion
+of real forms (Section \ref{realgroups}), and to keep
+the exposition as elementary as possible, we choose to work with complex
+groups. Experts, and those with an interest in other fields, may wish
+to convert to the language of algebraic groups where appropriate.
+
+We now describe the parameters for a connected reductive complex
+group.  These are provided by {\it root data} and {\it based root
+ data}. Good references are the books by Humphreys
+\cite{humphreys_lie_algebras} and Springer \cite{springer_book}.
+
+
+We begin with a pair $X,\ch X$ of 
+free abelian groups of finite rank, together with 
+a perfect pairing $\langle\,,\,\rangle:X\times\ch X\rightarrow \Z$.
+Suppose $\Delta\subset X,\ch\Delta\subset \ch X$ are finite sets,
+equipped with a bijection $\alpha\rightarrow\ch\alpha$.
+For $\alpha\in \Delta$ define the reflection
+$s_\alpha\in\Hom(X,X)$:
+$$
+s_\alpha(x)=x-\langle x,\ch\alpha\rangle\alpha \quad (x\in X)
+$$
+and define $s_{\ch\alpha}\in \Hom(\ch X,\ch X)$ similarly.
+
+A {\it root datum} is a quadruple
+\begin{equation}
+\label{e:rootdatum}
+D=(X,\Delta,\ch X,\ch\Delta)
+\end{equation}
+where $X,\ch X$ are free abelian groups of finite rank, in duality via
+a perfect pairing $\langle\,,\,\rangle$, and
+$\Delta,\ch\Delta$ are finite subsets of $X,\ch X$, respectively. 
+We assume there is a bijection
+$\Delta\ni\alpha\mapsto\ch\alpha\in\ch\Delta$ such that for
+all $\alpha\in\Delta$,
+\begin{equation}
+\label{e:bijection}
+\langle\alpha,\ch\alpha\rangle=2,\,
+s_\alpha(\Delta)=\Delta,\, s_{\ch\alpha}(\ch\Delta)=\ch\Delta.
+\end{equation}
+
+Suppose we are given $X,\ch X$ and finite subsets  $\Delta\subset X$ and
+$\ch\Delta\subset\ch X$. 
+By 
+\cite[Lemma VI.1.1]{bourbaki_4-6}
+applied to $\Q\langle\Delta\rangle$
+and $\Q\langle\ch\Delta\rangle$ there is at most one bijection
+$\alpha\mapsto\ch\alpha$ satisfying \eqref{e:bijection}.
+Alternatively suppose we are given only a finite subset $\Delta$ of $X$,
+satisfying $X\subset\Q\langle\Delta\rangle$. 
+By (loc.~cit.) there is at most one subset $\ch\Delta$, and bijection
+$\alpha\mapsto\ch\alpha$, satisfying \eqref{e:bijection}.
+The condition  $X\subset \Q\langle\Delta\rangle$ holds if and only if the corresponding group is
+semisimple.
+
+
+Suppose $D_i=(X_i,\Delta_i,\ch X_i,\ch\Delta_i)$ ($i=1,2$) are root
+data. We say they are isomorphic if there is an isomorphism
+$\phi\in\Hom(X_1,X_2)$  satisfying 
+$\phi(\Delta_1)=\Delta_2$ and 
+$\phi^t(\ch\Delta_2)=\ch\Delta_1$.
+Here $\phi^t\in \Hom(\ch X_2,\ch X_1)$ is defined by
+\begin{equation}
+\label{e:transpose}
+\langle\phi(x_1),\ch x_2\rangle_2= \langle x_1,\phi^t(\ch
+x_2)\rangle_1\quad (x_1\in X_1,\ch x_2\in X_2^\vee).
+\end{equation}
+
+Let $G$ be a connected reductive complex group and choose a
+Cartan subgroup $H$ of $G$.
+Let $X^*(H),X_*(H)$ be the character and co-character lattices of $H$
+respectively.
+We have canonical isomorphisms
+\begin{equation}
+\label{e:XH}
+\h\simeq X_*(H)\otimes_\Z\C,\quad
+\h^*\simeq X^*(H)\otimes_\Z\C
+\end{equation}
+where $\h$ is the Lie algebra of $H$ and $\h^*=\Hom(\h,\C)$.
+(If $G$ has rank $n$ then $H\simeq (\C^\times)^n$,  $X_*(H)\simeq\Z^n$
+and $\h\simeq\C^n$.) 
+Let $\Delta=\Delta(G,H)$ be the set of roots of $H$ in $G$, and
+$\ch\Delta=\ch\Delta(G,H)$ the corrresponding co-roots. 
+Associated to $(G,H)$ is the root datum
+
+\begin{equation}
+\label{e:DGH}
+D(G,H)=(X^*(H),\Delta,X_*(H),\ch\Delta).
+\end{equation}
+
+
+
+If $H'$ is another Cartan subgroup then there is an element $g\in G$
+so that $gHg\inv=H'$.
+Let $D'=(X^*(H'),\Delta(G,H'),X_*(H'),\ch\Delta(G,H'))$ be the
+corresponding root datum.
+The inverse transpose action on characters induces an isomorphism
+$$
+(Ad(g)^{t})\inv:X^*(H)\rightarrow X^*(H')
+$$
+which gives an isomorphism $D(G,H)\simeq D(G,H')$.
+
+Now suppose in addition to $H$ we have chosen a Borel subgroup $B$
+containing $H$. Let 
+$\Delta^+$ be the corresponding set of positive roots of $\Delta$, with
+simple roots $\Pi$.
+Then $\Pi^{\vee}=\{\ch\alpha\,|\, \alpha\in\Pi\}$ is a set of
+simple roots of $\ch\Delta$, and 
+
+\begin{equation}
+\label{e:DbGBH}
+D_b(G,B,H)=(X,\Pi,\ch X,\Pi^{\vee})
+\end{equation}
+is a  {\it based root datum}.
+If $H'\subset B'$ are another Cartan and Borel subgroup then
+there is a {\it canonical} isomorphism  $D_b(G,B,H)\simeq D_b(G,B',H')$.
+
+Each root datum is the root datum of a reductive
+algebraic group, which is determined uniquely up to isomorphism, and
+the same holds for based root data.
+
+Note that a connected reductive complex group $G$ of rank $n$ is determined by
+a small finite set of data: two sets (of order the semisimple rank of
+$G$)
+of integral $n$-vectors, subject only
+to condition \eqref{e:bijection}, which may be expressed by 
+requiring that the matrix of dot products is a Cartan matrix.
+
+

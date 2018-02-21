@@ -1,0 +1,95 @@
+\documentclass[letterpaper,10pt,oneside,onecolumn,openright,final]{amsbook}
+%change to twoside later
+\usepackage{tgbonum}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
+
+\include{definitions}  %latex definitions
+
+\begin{document}
+\title{Atlas of Lie Groups and Representations}
+%    Information for first author
+\author{Jeffrey Adams}
+\author{Annegret Paul}
+\author{Peter Trapa}
+\author{Marc van Leeuwen}
+\author{David A. Vogan Jr.}
+
+\frontmatter                            % only in book class (roman page #s)
+\maketitle                              % Print title page.
+\tableofcontents                        % Print table of contents
+\mainmatter                             % only in book class (arabic page #s)
+\backmatter
+\maketitle
+%each included file should start with
+%\chapter{...} or \section{...} 
+%\label{same as name of file, without the .tex extension}
+
+\include{intro1}{Introduction I: Mathematics}
+\include{intro2}{Introduction II: Software
+
+\part{Structure Theory}
+\label{p:structure}
+\include{root}%Root Systems
+\include{complexGroups}%Complex Reductive Groups
+\include{automorphisms}%Automorphisms of Reductive Groups
+\include{involutions}%Involutions
+\include{inner}
+\include{realgroups}%Real Reductive Groups}
+\include{galois}
+\include{cartanClassification}
+\include{extended}
+\section{Dual group}
+\include{kgb}%K orbits on G/B}
+\part{Representations of Real Groups}
+\include{langlands}%The Langlands Classification}
+\include{parameters}%Parameters for representations}
+\include{blocks}%Blocks}
+\include{duality}%Vogan Duality}
+\include{coherent}%Coherent Continuation}
+\include{translation}%The Translation Principle}
+\include{klv}%The Kazhdan-Lusztig-Vogan algorithm}
+\include{cells}%Cells}
+\include{av}%Associated Varieties}
+\part{Hermitian Forms on Representations}
+\include{hermitian}%Hermitian Representations}
+\include{unitary}%Unitary Representations}
+\include{cform}%c-Hermitian form}
+\include{extendedklv}%KLV theory for the c-Hermitian form: equal rank case}
+\include{extendedklv1}%KLV theory for the c-Hermitian form: unequal rank case}
+\include{extendedklv2}%KLV theory for the c-Hermitian form: unequal rank case}
+\include{unitaryDual}%Computing the Unitary dual}
+\part{Complements}
+\include{computingav}%Computing Associated Varieties}
+\include{primitive}%Primitive Ideals}
+\include{unipotent}%Unipotent Representations}
+\include{characters}
+
+\include{references}
+
+
+
+
+\enddocument
+\end
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End: s_{1}:0 -> -1 6
+
+
+
+
+
