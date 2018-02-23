@@ -20,12 +20,11 @@
 
 \begin{document}
 \title{Atlas of Lie Groups and Representations}
-%    Information for first author
 \author{Jeffrey Adams}
+\author{Marc van Leeuwen}
 \author{Annegret Paul}
 \author{Peter Trapa}
-\author{Marc van Leeuwen}
-\author{David A. Vogan Jr.}
+\author{David A. Vogan, Jr.}
 
 \frontmatter                            % only in book class (roman page #s)
 \maketitle                              % Print title page.
@@ -33,53 +32,55 @@
 \mainmatter                             % only in book class (arabic page #s)
 \backmatter
 \maketitle
+
 %each included file should start with
 %\chapter{...} or \section{...} 
 %\label{same as name of file, without the .tex extension}
 
-\include{intro1}{Introduction I: Mathematics}
-\include{intro2}{Introduction II: Software
+\include{intro1}{Introduction I: Mathematics}%mathematical overview
+\include{intro2}{Introduction II: Software}%overview of the language
 
 \part{Structure Theory}
 \label{p:structure}
-\include{root}%Root Systems
-\include{complexGroups}%Complex Reductive Groups
-\include{automorphisms}%Automorphisms of Reductive Groups
-\include{involutions}%Involutions
-\include{inner}
-\include{realgroups}%Real Reductive Groups}
-\include{galois}
-\include{cartanClassification}
-\include{extended}
+\include{root}%root systems
+\include{complexGroups}%complex reductive groups
+\include{automorphisms}%automorphisms of reductive groups
+\include{involutions}%involutions
+\include{inner}%innern classes
+\include{realgroups}%real reductive groups
+\include{galois}%galois cohomology
+\include{cartanClassification}%Cartan classification of real forms
+\include{extended}%extended groups
 \section{Dual group}
-\include{kgb}%K orbits on G/B}
+\include{kgb}%K orbits on G/B
 \part{Representations of Real Groups}
-\include{langlands}%The Langlands Classification}
-\include{parameters}%Parameters for representations}
-\include{blocks}%Blocks}
-\include{duality}%Vogan Duality}
-\include{coherent}%Coherent Continuation}
-\include{translation}%The Translation Principle}
-\include{klv}%The Kazhdan-Lusztig-Vogan algorithm}
-\include{cells}%Cells}
-\include{av}%Associated Varieties}
+\include{langlands}%the Langlands classification
+\include{parameters}%parameters for representations
+\include{blocks}%blocks of representations
+\include{induction}%real parabolic induction
+\include{cohomological}%cohomological induction
+\include{duality}%Vogan duality
+\include{coherent}%coherent continuation
+\include{translation}%the translation principle
+\include{klv}%the Kazhdan-Lusztig-Vogan algorithm
+\include{cells}%cells of representation
+\include{av}%associated varieties of representations
 \part{Hermitian Forms on Representations}
-\include{hermitian}%Hermitian Representations}
-\include{unitary}%Unitary Representations}
-\include{cform}%c-Hermitian form}
-\include{extendedklv}%KLV theory for the c-Hermitian form: equal rank case}
-\include{extendedklv1}%KLV theory for the c-Hermitian form: unequal rank case}
-\include{extendedklv2}%KLV theory for the c-Hermitian form: unequal rank case}
-\include{unitaryDual}%Computing the Unitary dual}
+\include{hermitian}%Hermitian representations
+\include{unitary}%Unitary representations
+\include{cform}%c-Hermitian form
+\include{extendedklv}%KLV theory for the c-Hermitian form: equal rank case
+\include{extendedklv1}%KLV theory for the c-Hermitian form: unequal rank case
+\include{extendedklv2}%KLV theory for the c-Hermitian form: unequal rank case
+\include{unitaryDual}%computing the unitary dual
 \part{Complements}
-\include{computingav}%Computing Associated Varieties}
-\include{primitive}%Primitive Ideals}
-\include{unipotent}%Unipotent Representations}
-\include{characters}
-
-\include{references}
-
-
+\include{computingav}%computing associated Varieties
+\include{primitive}%primitive ideals
+\include{unipotent}%unipotent representations
+\include{characters}%global characters
+\include{appendix}%software specification
+\bibliographystyle{plain}
+\bibliography{./refs}
 
 
 \enddocument
