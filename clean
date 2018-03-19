@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -f *bbl
+rm -f #blg
+rm -f *aux
+rm -f *log
+rm -f *toc
+rm -f #*
+rm -f *~

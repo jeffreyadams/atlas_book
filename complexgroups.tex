@@ -1,3 +1,122 @@
 \chapter{Complex Reductive Groups}  
 \label{complexgroups}
 
+The groups at the core of the atlas project are connected, complex
+reductive algebraic groups. The Lie groups we are interested in are
+the {\it real points} of such a group, which we discuss in Chapter
+\ref{realgroups}.
+
+Before giving the formal defintion we give a number of examples.
+
+\begin{example}[General and special linear groups]
+Let $\GL(n,\C)$ be the group of invertible, $n\times n$ matrices over $\C$.
+Of particular importance is $GL(1,\C)\simeq \C^*$.
+
+The center of $\GL(n,\C)$ is isomorphis to $GL(1,\C)$, and its derived group is $\SL(n,\C)=\{g\in \GL(n,\C)\mid \det(g)=1\}$.
+
+\end{example}
+
+Throughout this section all of our groups are complex, and we drop the
+$\C$ from the notation, for example $\GL(n)=\GL(n,\C)$. 
+
+\begin{example}[Special orthogonal and symplectic groups]
+
+The special orthogonal group is
+$$
+\SO(n)=\{g\in \SL(n)\mid gg^t=I\}
+$$
+
+Let $J=
+\begin{pmatrix}
+  &I_n\\-I_n&0
+\end{pmatrix}$. Then the symplectic group is:
+
+$$
+\Sp(2n)=\{g\in \SL(n)\mid gJg^t=J\}
+$$
+\end{example}
+
+The {\it classical groups} are $\GL(n), \SL(n), \SO(n)$ and $\Sp(2n)$.
+
+We obtain other groups from these by taking quotients by a central
+subgroup, or passing to the simply connected cover.
+
+A reductive group is said to be {\it of adjoint type} (or simply {\it
+  adjoint}) if its center is trivial. If $G$ is reductive, then
+$G/Z(G)$ is adjoint, and is denoted $\Gad$.
+
+Here are the classical groups, their centers, and their adjoint groups.
+
+\bigskip
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+$G$& $n$ & $Z(G)$ & $\Gad$\\\hline
+$\GL(n)$ & $n\ge 1$ &$\GL(1)$ & $\PGL(n)$ \\\hline
+$\SL(n)$ & $n\ge 2$& $\Z/n\Z$ & $\PSL(n)\simeq \PGL(n)$ \\\hline
+$\SO(n)$ & $n\text{ odd}\ge 3$ &$1$ & $\PSO(n)\simeq \SO(n)$\\\hline
+ & $n\text{ odd}\ge 3$ &$1$ & $\PSO(n)\simeq \SO(n)$\\\hline
+& $n\text{ even}\ge 4$& $\Z/2\Z$ & $\PSO(n)$\\\hline
+$\Sp(2n)$ & $n\ge 1$ & $\Z/2\Z$ & $\PSp(2n)$\\\hline
+\end{tabular}
+\bigskip
+
+We could also have included $SO(2)\simeq GL(1)$.
+There are a small number of overlaps in the table, for example $SL(2)\simeq Sp(4)$. 
+Typically the adjoint
+group does not have a simpler realization than as a quotient, except in low dimensions. 
+For example 
+$\PSL(2)\simeq \PGL(2)\simeq \SO(3)$, and $\PSp(4)\simeq \SO(5)$. 
+
+The groups $\SL(n)$ and $\Sp(2n)$ are simply connected. The fundamental
+group of $\SO(n)$ ($n\ge 3$) is $\Z/2\Z$, so it has a two-fold, simply connected cover, denoted $\Spin(n)$. 
+
+By {\it complex algebraic group} we mean a subgroup $G$ of $GL(n,\C)$
+which is the set of solutions of a (finite) set of equations, which
+are polynomials in the coordinates. Such a group is said to be {\it
+  unipotent} if it is conjugate in $GL(n,\C)$ to a subgroup of
+the upper triangular matrices with ones on the diagonal.
+
+The {\it unipotent radical} $\Gu$ of $G$ is the (unique) maximal,
+connected, normal, unipotent subgroup of $G$.  The {\it radical}
+$\Grad$ of $G$ is the (unique) maximal, connected, normal solvable (as
+an abstract group) subgroup of $G$. 
+
+\begin{definition}
+A complex, connected reductive group $\G$ is a connected, complex algebraic group such that $\Gu$ is trivial. 
+We say $\G$ is {\it semisimple} if  $\Grad=1$.
+\end{definition}
+
+By a torus we mean a group isomorphic to $\GL(1,\C)^n$. We denote the derived group of $G$ by $\Gder$. 
+
+Here are some basic properties of connected reductive groups. 
+
+A connected complex group is reductive if and only if it is the complexification of a compact connected group [reference?].
+
+
+Suppose $\G$ is a complex, connected reductive group. 
+\begin{enumerate}
+\item $\Lie(G)$ is a reductive Lie algebra.
+
+\item The radical  $\Grad$ of $\G$ is the maximal, connected central torus. 
+
+\item The groups  $\G/\Grad$, $\Gad=\G/Z(\G)$  and $\Gder$ are semisimple.
+
+\item If $A$ is any finite subgroup of $Z(G)$ then $G/A$ is a connected, reductive group.
+In particular this holds for $\Gad$.
+
+\item $\G$ is semisimple if and only if $\Lie(G)$ is a semisimple Lie algebra.
+
+\item Suppose $\G$ is semisimple. Then the 
+simply  connected cover $\Gsc$ of $\G$, in the sense of Lie groups, is a connected, reductive algebraic group.
+In particular $\G\simeq \Gsc/A$ where $A$ is a finite subgroup of $Z(\Gsc)$. 
+
+\end{enumerate}
+
+\begin{lemma}
+\item If $G$ is a connected, complex reductive algebraic group then
+$G=\Grad\Gder$: every element of $G$ can be written $g=zh$ with
+$z\in \Grad$ a $h\in\Gder$, and $(zh)(z'h')=(zz')(hh')$.
+\end{lemma}
+
+

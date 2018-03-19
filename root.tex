@@ -1,19 +1,17 @@
 \chapter{Root Systems}  
 \label{root}
 
-For many
-purposes one may identify a connected reductive algebraic 
-group with its group of complex points.
-For the discussion
-of real forms (Section \ref{realgroups}), and to keep
-the exposition as elementary as possible, we choose to work with complex
-groups. Experts, and those with an interest in other fields, may wish
-to convert to the language of algebraic groups where appropriate.
+The starting point for all \Atlas calculations is a connected,
+complex, reductive group. While these are fairly complicated objects,
+one of the beautiful features of the theory, and one which makes the
+entire \Atlas project possible, is that a reductive group $G$ is 
+determined by a very compact set of data: its {\it root datum}. 
 
-We now describe the parameters for a connected reductive complex
-group.  These are provided by {\it root data} and {\it based root
- data}. Good references are the books by Humphreys
-\cite{humphreys_lie_algebras} and Springer \cite{springer_book}.
+In this section we summarize the parts of the theory of root data
+which we need. Primary references are Chapters 4-6 of Bourbaki/Lie Groups
+\cite{bourbaki_4-6} and  Springer's {\it Linear Algebraic Groups} \cite{springer_book}. We also recommend
+the books by Humphreys
+\cite{humphreys_lie_algebras} and Borel {\cite{borel_algebraic_groups}.
 
 
 We begin with a pair $X,\ch X$ of 
@@ -21,14 +19,19 @@ free abelian groups of finite rank, together with
 a perfect pairing $\langle\,,\,\rangle:X\times\ch X\rightarrow \Z$.
 Suppose $\Delta\subset X,\ch\Delta\subset \ch X$ are finite sets,
 equipped with a bijection $\alpha\rightarrow\ch\alpha$.
-For $\alpha\in \Delta$ define the reflection
-$s_\alpha\in\Hom(X,X)$:
+For $\alpha\in \Delta$ define the reflections
+$s_\alpha\in\Hom(X,X)$ and 
+$s_{\ch\alpha}\in\Hom(\ch X,\ch X)$ as follows:
 $$
-s_\alpha(x)=x-\langle x,\ch\alpha\rangle\alpha \quad (x\in X)
+\begin{aligned}
+s_\alpha(x)&=x-\langle x,\ch\alpha\rangle\alpha \quad (x\in X)\\
+s_{\ch\alpha}(y)&=y-\langle \alpha,y\rangle\ch\alpha \quad (y\in \ch X).
+\end{aligned}
 $$
-and define $s_{\ch\alpha}\in \Hom(\ch X,\ch X)$ similarly.
 
-A {\it root datum} is a quadruple
+
+Following \cite[\S7.4]{springer_book} we define a  {\it root
+  datum} to be a quadruple
 \begin{equation}
 \label{e:rootdatum}
 D=(X,\Delta,\ch X,\ch\Delta)
@@ -60,6 +63,17 @@ The condition  $X\subset \Q\langle\Delta\rangle$ holds if and only if the corres
 semisimple.
 
 
+Suppose $(X,\Delta,\ch X,\ch\Delta)$ is a root datum, and let
+$V=X\otimes\R$.  Then $(V,\Delta)$ is a root system in the sense of
+\cite[Chapter VI, \S1]{bourbaki_4-6}. Although this definition makes
+no reference to a bilinear form on $V$, it follows that there is a
+non-degenerate bilinear form $(\,,\,)$ on $V$, unique up to scalar,
+such that each $s_\alpha$ is an orthogonal reflection with respect to
+$(\,,\,)$. We could then identify $V^*$ with $V$, and for $\alpha\in
+\Delta$, identify $\ch\alpha\in V^*$ with $2\alpha/(\alpha,\alpha)\in
+V$. However this is a bad idea: it is important to remember that roots
+and coroots live in different (dual) spaces.
+
 Suppose $D_i=(X_i,\Delta_i,\ch X_i,\ch\Delta_i)$ ($i=1,2$) are root
 data. We say they are isomorphic if there is an isomorphism
 $\phi\in\Hom(X_1,X_2)$  satisfying 
@@ -72,11 +86,42 @@ Here $\phi^t\in \Hom(\ch X_2,\ch X_1)$ is defined by
 x_2)\rangle_1\quad (x_1\in X_1,\ch x_2\in X_2^\vee).
 \end{equation}
 
-Let $G$ be a connected reductive complex group and choose a
-Cartan subgroup $H$ of $G$.
-Let $X^*(H),X_*(H)$ be the character and co-character lattices of $H$
-respectively.
-We have canonical isomorphisms
+
+
+\subsection{Root Datum of a reductive group}
+
+Now suppose $G$ is a connected, complex reductive group (see Chapter
+\ref{complexgroups}).
+
+A {\it Cartan subgroup} of $\G$ is a maximal torus, and a {\it Borel
+  subgroup} is a maximal, connected solvable subgroup.
+All Cartan subgroups are $\G$-conjugate, as are all Borel subgroups.
+Furthermore if $B$ is a Borel subgroup, then $B$ contains a Cartan subgroup $H$, 
+and any two Cartan subgroups of $B$ are $B$ (not just $\G$) conjugate.
+
+One of the key features of the \Atlas approach is that 
+$$
+\boxed{\text{We fix }H\subset B\subset G\text{ once and for all}}.
+$$
+Define 
+$$
+X^*(H)=\Hom_{\text{alg}}(H,\C^*).
+$$
+This is a lattice, the {\it character lattice of} $G$
+with respect to $H$. Similarly the {\it cocharacter lattice} is
+$$
+X_*(H)=\Hom_{\text{alg}}(\C^*,H)
+$$
+Suppose $\alpha\in X^*(H)$ and $\tau\in X_*(H)$.
+Define $\langle\alpha,\tau\rangle\in\Z$ by:
+$$
+\alpha(\tau(z))=z^{\langle\alpha,\tau\rangle}\quad(\text{for
+  all }z\in\C^*)
+$$
+Then $\langle\,,\,\rangle$ is a perfect pairing $X^*(H)\times
+X_*(H)\rightarrow\Z$. 
+
+Let $\h=\Lie(H)$ and $\h^*=\Hom_\C(\h,\C)$. Then we have canonical isomorphisms
 \begin{equation}
 \label{e:XH}
 \h\simeq X_*(H)\otimes_\Z\C,\quad
@@ -106,6 +151,7 @@ $$
 $$
 which gives an isomorphism $D(G,H)\simeq D(G,H')$.
 
+
 Now suppose in addition to $H$ we have chosen a Borel subgroup $B$
 containing $H$. Let 
 $\Delta^+$ be the corresponding set of positive roots of $\Delta$, with
@@ -131,5 +177,7 @@ $G$)
 of integral $n$-vectors, subject only
 to condition \eqref{e:bijection}, which may be expressed by 
 requiring that the matrix of dot products is a Cartan matrix.
+
+
 
 

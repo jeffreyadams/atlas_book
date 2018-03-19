@@ -1,3 +1,69 @@
 \chapter{Automorphisms of Reductive Groups}
 \label{automorphisms}
 
+Throughout this section $\G$ is a connected reductive complex group.
+We write  $\Aut(\G)$ for the group of algebraic (equivalently holomorphic) automorphisms of $\G$. 
+
+If $g\in\G$ then $\int(g)$ denotes the inner automorphism of
+conjugation by $g$: $\int(g)(h)=ghg\inv$. 
+
+
+An {\it involutive automorphism} of $G$ is an element $\theta\in\Aut(G)$
+satisfying
+$\theta^2(g)=g$ for all $g\in G$.  The group $G$ acts on the space of
+involutive automorphisms: $g\cdot\theta=\int(g)\theta\int(g\inv)$.  We
+need to understand the structure of the space of orbits in some detail.
+
+Let $\Int(G)$ be the group of inner automorphisms of $G$. The map $g\rightarrow \int(g)$ 
+factors to an isomorphism $\Gad\simeq \Int(G)$. 
+
+
+There is an exact sequence
+\begin{equation}
+\label{e:autexact}
+1\rightarrow \Int(G)\longrightarrow \Aut(G)\overset{p}\longrightarrow \Out(G)\rightarrow 1.
+\end{equation}
+
+\begin{definition}
+A {\it splitting} of $G$ is a set $\spl=(B,H,\{X_\alpha\})$ where $B$ is
+a Borel subgroup, $H\subset B$ is a Cartan subgroup, and $\{X_\alpha\}$ is a set of choices of 
+simple root vectors (in the Lie algebra of $G$) for the simple roots of $\Delta^+(H,G)$ (see ?).
+
+Let $\Aut(G,\spl)$ be the automorphisms $\tau$ of $G$ preserving $\spl=(H,B,\{X_\alpha\}$, i.e. satisfying $\tau(H)=H, \tau(B)=B$ and $\tau(\{X_\alpha\})=\{X_\alpha\}$. 
+
+\end{definition}
+
+\begin{theorem}
+\begin{enumerate}
+
+
+\item If $\tau\in \Aut(G,\spl)$ is an inner automorphism then $\tau=1$. 
+
+
+\item If $\gamma\in\Out(G)$ then there is a unique element $\tau\in\Aut(G,\spl)$ mapping to $\gamma$ in \eqref{e:autexact}.
+The map $\gamma\rightarrow s(\gamma)=\tau$ is a splitting of \eqref{e:autexact}.
+
+\item If $\spl'$ is another splitting then there exists a unique inner automorphism $\mu=\tau(g)$ ($g\in G$) so that 
+$\spl'=\mu(\spl)$. Hence $\Aut(G,\spl)$ and $\Aut(G,\spl')$ are {\it canonically} isomorphic, via an inner automorphism of $G$.
+
+\item $\Gad\simeq \Int(G)$ acts simply transitively on the set of splittings.
+
+\item $\Out(G)$ is isomorphic to the automorphism group of a based root datum of $G$. 
+
+\item If $G$ is semisimple then $\Out(G)$ is a subgroup of the automorphism group of the Dynkin diagram of $G$,
+with equality if $G$ is simply connected or adjoint.
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+An {\it inner class} of automorphisms of $G$ is a subset of
+$\Aut(G)$ all mapping to the same element of $\Out(G)$.
+We say two automorphisms of $G$ are {\it inner to each other} if they are in the same inner class.
+
+If $\gamma\in \Out(G)$ the {\it inner class determined by $\gamma$} is $p\inv(\gamma)\subset \Aut(G)$. 
+\end{definition}
+
+
+
+
+

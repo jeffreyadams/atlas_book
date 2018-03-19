@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm -f *bbl
+rm -f *aux
+rm -f #blg
+rm -f *toc
+
+latex book
+bibtex book
+latex book
+pdflatex book
